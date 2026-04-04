@@ -30,4 +30,4 @@ include = ["pyui_dl*"]
 
 [tool.setuptools.package-data]
 # パッケージ内に同梱する非Pythonファイル（フォントや初期データなど）の指定
-"pyui_dl" = ["fonts/*.ttf", "fonts/*.ttc" "data/*.json"]
+"pyui_dl" = ["fonts/*.ttf", "fonts/*.ttc", "data/*.json"]
