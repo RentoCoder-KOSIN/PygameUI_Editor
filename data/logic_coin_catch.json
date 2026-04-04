@@ -1,0 +1,89 @@
+{
+  "global_vars": {
+    "score": 0,
+    "life": 3,
+    "game_over": false,
+    "speed": 2.0
+  },
+  "widget_rules": {
+    "coin_1": [
+      {
+        "id": "cn1_catch",
+        "label": "コイン取得",
+        "event": {"type": "on_collide", "with_tag": "player"},
+        "conditions": [],
+        "actions": [
+          {"type": "set_var",  "var": "score", "op": "+=",  "value": 10},
+          {"type": "move_to",  "target": "coin_1", "x": 80, "y": -60},
+          {"type": "emit_event", "event": "score_update", "target": "score_label"}
+        ]
+      }
+    ],
+    "coin_2": [
+      {
+        "id": "cn2_catch",
+        "label": "コイン取得",
+        "event": {"type": "on_collide", "with_tag": "player"},
+        "conditions": [],
+        "actions": [
+          {"type": "set_var",  "var": "score", "op": "+=",  "value": 10},
+          {"type": "move_to",  "target": "coin_2", "x": 220, "y": -60},
+          {"type": "emit_event", "event": "score_update", "target": "score_label"}
+        ]
+      }
+    ],
+    "coin_3": [
+      {
+        "id": "cn3_catch",
+        "label": "コイン取得",
+        "event": {"type": "on_collide", "with_tag": "player"},
+        "conditions": [],
+        "actions": [
+          {"type": "set_var",  "var": "score", "op": "+=",  "value": 10},
+          {"type": "move_to",  "target": "coin_3", "x": 340, "y": -60},
+          {"type": "emit_event", "event": "score_update", "target": "score_label"}
+        ]
+      }
+    ],
+    "bomb_1": [
+      {
+        "id": "bm1_hit",
+        "label": "爆弾ヒット",
+        "event": {"type": "on_collide", "with_tag": "player"},
+        "conditions": [{"var": "life", "op": ">", "value": 0}],
+        "actions": [
+          {"type": "set_var",  "var": "life",  "op": "-=", "value": 1},
+          {"type": "move_to",  "target": "bomb_1", "x": 160, "y": -60},
+          {"type": "emit_event", "event": "life_update", "target": "life_label"}
+        ]
+      }
+    ],
+    "bomb_2": [
+      {
+        "id": "bm2_hit",
+        "label": "爆弾ヒット",
+        "event": {"type": "on_collide", "with_tag": "player"},
+        "conditions": [{"var": "life", "op": ">", "value": 0}],
+        "actions": [
+          {"type": "set_var",  "var": "life",  "op": "-=", "value": 1},
+          {"type": "move_to",  "target": "bomb_2", "x": 300, "y": -60},
+          {"type": "emit_event", "event": "life_update", "target": "life_label"}
+        ]
+      }
+    ],
+    "btn_restart": [
+      {
+        "id": "restart_click",
+        "label": "リスタート",
+        "event": {"type": "on_click"},
+        "conditions": [{"var": "game_over", "op": "==", "value": true}],
+        "actions": [
+          {"type": "set_var", "var": "score",     "op": "=",  "value": 0},
+          {"type": "set_var", "var": "life",      "op": "=",  "value": 3},
+          {"type": "set_var", "var": "game_over", "op": "=",  "value": false},
+          {"type": "set_var", "var": "speed",     "op": "=",  "value": 2.0}
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "global_vars": {
+    "hp": 100,
+    "score": 0
+  },
+  "widget_rules": {
+    "player": [
+      {
+        "id": "aacd9a64",
+        "label": "ダメージ処理",
+        "event": {
+          "type": "on_collide",
+          "with_tag": "enemy"
+        },
+        "conditions": [],
+        "actions": [
+          {
+            "type": "set_var",
+            "var": "hp",
+            "op": "-=",
+            "value": 10
+          },
+          {
+            "type": "play_anim",
+            "target": "player",
+            "anim": "hurt"
+          }
+        ]
+      }
+    ],
+    "btn_exit": [
+      {
+        "id": "a1241e46",
+        "label": "クリックで終了",
+        "event": {
+          "type": "on_click"
+        },
+        "conditions": [],
+        "actions": [
+          {
+            "type": "change_scene",
+            "scene": "game_over"
+          }
+        ]
+      }
+    ]
+  }
+}

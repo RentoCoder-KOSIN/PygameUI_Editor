@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyui_dl"
+version = "1.0.0"
+description = "A hybrid UI framework and editor and logic for Pygame (Educational Purpose)"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    { name = "RentoCoder-KOSIN", email = "konosiniti@gmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pygame>=2.0.0",
+]
+
+[project.scripts]
+# ターミナルで 'pyui' と打つと pyui_dl パッケージの main.py 内の main() が実行される
+pyui = "pyui_dl.main:main"
+
+[tool.setuptools.packages.find]
+# プログラム本体である pyui_dl フォルダのみをパッケージ対象とする
+include = ["pyui_dl*"]
+
+[tool.setuptools.package-data]
+# パッケージ内に同梱する非Pythonファイル（フォントや初期データなど）の指定
+"pyui_dl" = ["fonts/*.ttf", "fonts/*.ttc" "data/*.json"]
