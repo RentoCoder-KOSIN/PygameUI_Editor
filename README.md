@@ -10,6 +10,9 @@ Pygame用のUIフレームワーク。ビジュアルエディタでレイアウ
 
 ```bash
 pip install -e .
+
+#or
+pip install git+https://github.com/RentoCoder-KOSIN/PygameUI_Editor
 ```
 
 ---
